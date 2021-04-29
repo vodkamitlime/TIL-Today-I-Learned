@@ -1,10 +1,11 @@
 # 💻 TIL (Today-I-Learned)
 
 <br>
-<br>
+
 ### 👓 Purpose of this TIL Repository: 
 Upload new methods or algorithms learned (daily basis - hopefully)
 
+<br>
 
 ### 🔖 Index: (updating)
 00-Coding-tests<br>
