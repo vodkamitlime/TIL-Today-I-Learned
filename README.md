@@ -3,7 +3,7 @@
 <br>
 
 ### 👓 Purpose of this TIL Repository: 
-Upload new methods or algorithms learned (daily basis - hopefully)
+Upload new methods or algorithms learned
 
 <br>
 
