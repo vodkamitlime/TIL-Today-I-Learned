@@ -11,3 +11,4 @@ Upload new methods or algorithms learned (daily basis - hopefully)
 00-Coding-tests<br>
 01-Javascript-methods<br>
 02-Python-methods<br>
+03-React
