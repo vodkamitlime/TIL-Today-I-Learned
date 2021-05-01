@@ -2,13 +2,13 @@
 
 <br>
 
-### 👓 Purpose of this TIL Repository: 
-Upload new methods or algorithms learned (daily basis - hopefully)
+### 👓 Purpose of this Repository: 
+Upload new methods or algorithms learned
 
 <br>
 
 ### 🔖 Index: (updating)
-00-Coding-tests<br>
-01-Javascript-methods<br>
-02-Python-methods<br>
+00-Algorithms<br>
+01-Javascript<br>
+02-Python<br>
 03-React
