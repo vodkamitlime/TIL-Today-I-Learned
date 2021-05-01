@@ -12,6 +12,7 @@ function NumberList(props) {
   		<li key='3'>3</ul>
   	</ul>
   	)
+ }
 ````
 
 ### Key 의 특징은? 
