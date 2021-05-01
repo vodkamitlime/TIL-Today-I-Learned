@@ -48,5 +48,5 @@ ReactDOM.render(
 ```
 
 ### 참고자료
-React 공식문서: List 와 Key [https://ko.reactjs.org/docs/lists-and-keys.html]
+[React 공식문서: List 와 Key](https://ko.reactjs.org/docs/lists-and-keys.html)
 
