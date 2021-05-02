@@ -48,7 +48,7 @@ ReactDOM.render(
 );
 ```
 
-### 배운 점
+### 배운 점 :
 - Component 가 listed item 처럼 나열될 경우 Key 를 작성해 줌으로써 고유성을 유지하도록 해줘야 한다. 
 
 
