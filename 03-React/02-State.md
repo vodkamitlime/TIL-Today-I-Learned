@@ -1,4 +1,4 @@
-## State (& Lifecycle)
+## State
 
 ### State 란? 
 - 컴포넌트 내에서 동적으로 변경되는 값이다.
@@ -31,8 +31,8 @@ const Component = () => {
 ### 배운 점 :
 - jsx 문법의 특징상, state 가 Boolean 값이어도 element 의 attribute value 로 전달되는 순간 문자열로 변환된다. 
 - Boolean 값을 초기값으로 설정했다면 setState() 역시 state 를 Boolean 값으로 설정해준다. 
-> setState('') => false <br>
-> setState('a') => true 
+	> setState('') => false <br>
+	> setState('a') => true 
 - 비동기적이라는 특징으로 인해, 하나의 함수 내에서 변경한 state 를 바로 이어서 불러올 수는 없다. 
 
 ### 참고자료
