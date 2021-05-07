@@ -26,7 +26,7 @@
     - 정해진 인원만큼 순서대로 끊어서 매칭
     - enQueue 로 퇴장
 
-![Stack, Queue Image](./img/Stack.png)
+![Stack, Queue Image](./img/stack.png)
 
 ### 참고자료:
 - [[이것이 코딩 테스트다 with Python] 16강 스택과 큐 자료구조](https://youtu.be/7iLoLcna7Hw)
