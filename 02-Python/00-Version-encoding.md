@@ -10,7 +10,7 @@
 - 문자와 숫자를 1:1로 매칭시킨 표를 의미하기도 한다.
 <br>
 예시 이미지) 
-![ASCII](https://www.google.com/url?sa=i&url=https%3A%2F%2Fbournetocode.com%2Fprojects%2FGCSE_Computing_Fundamentals%2Fpages%2F3-3-5-ascii.html&psig=AOvVaw2_j0byXWEfNR2eu92jGQj1&ust=1620637534519000&source=images&cd=vfe&ved=0CAIQjRxqFwoTCODXhbefvPACFQAAAAAdAAAAABAJ)
+![ASCII](https://jehyunlee.github.io/2020/02/05/Python-General-1-AsciiIter/1_uc_2.png)
 
 ## Python Version 별 기본 Encoding
 - Version 2+: ASCII 
