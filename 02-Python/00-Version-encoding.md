@@ -10,6 +10,7 @@
 - 문자와 숫자를 1:1로 매칭시킨 표를 의미하기도 한다.
 <br>
 예시 이미지)<br> 
+
 ![ASCII](https://jehyunlee.github.io/2020/02/05/Python-General-1-AsciiIter/1_uc_2.png)
 
 ## Python Version 별 기본 Encoding
