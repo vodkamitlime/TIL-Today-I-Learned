@@ -1,4 +1,4 @@
-#CORS
+# CORS
 
 ## CORS (정책) 이란?
 - 2009년에 등장한 보안 정책으로, Cross-Origin Resource Sharing 의 약자이다.
@@ -10,20 +10,22 @@
 ### SOP란?
 - 일종의 보안 정책으로, "같은 출처에서만 리소스를 공유할 수 있다"는 규칙을 가진 정책이다.
 
-------
 1. Does it fulfill the SOP policy? (y/n)
 	-> y : 리소스 요청
 	-> n : 
 	2. Does it fulfill the CORS policy? 
 		-> y: 리소스 요청
 		-> n: 리소스 요청 불가 
-------
+
 
 ### "같은" 출처란?
+
 - url 의 scheme, host, port 가 동일한 경우를 일컫는다. 
 - 위의 3가지가 같다면 query 나 path 가 달라도 동일한 출처로 인식된다.
 
+
 ## Access Control Scenarios 
+
 - CORS 가 작동하는 3가지 방식이다. 
 1. Simple Requests(간단한 요청)
 	- 다음 조건들을 만족하는 경우에 해당한다.
@@ -31,14 +33,19 @@
 		- 자동적으로 설정되는 헤더와 Accept, Accept-Language, Content-Language, Content-Type 만 존재하는 요청
 		- Content-Type 가 application/x-www-form-urlencoded, multipart/form-data, text/plain 중 하나에 속하는 요청
 	- 간단한 요청의 경우, 서버에서 `Access-Control-Allow-Origin:` 헤더를 추가한 응답을 보낸다. 
+
 	![Simple Request](https://developer.mozilla.org/en-US/docs/Web/HTTP/CORS/simple-req-updated.png)
+
 2. Preflight Requests(사전 요청)
 	- 본 요청을 보내기 전에 OPTIONS 헤더를 단 요청을 먼저 보내, 안전성을 확인하는 형태의 요청이다. 
 	- 이 경우, 실제 POST 요청이 아닌 OPTIONS 요청에 `Access-Control-Request-*` 헤더가 포함되며, 이는 서버에게 실제 요청이 전달될 때 수행할 메서드와 기타 내용을 명시해주는 역할을 한다. 
 	- OPTIONS 메서드는 실제 리소스를 변경할 수 없는 안전한 메서드이다. 
+
 	![Preflight Requests](https://developer.mozilla.org/en-US/docs/Web/HTTP/CORS/preflight_correct.png)
+
 3. Credential Requests(인증을 이용하는 요청)
 	- 요청 헤더에 `withCredentials`와 같은 헤더가 포함된 경우 쿠키를 동반하게 되어, 서버의 응답에 `Access-Control-Allow-Credentials: true` 헤더가 포함되지 않을 경우 브라우저는 이를 거부하게 된다. 
+	
 	![Credential Requests](https://developer.mozilla.org/en-US/docs/Web/HTTP/CORS/cred-req-updated.png)
 
 ### 배운 점
