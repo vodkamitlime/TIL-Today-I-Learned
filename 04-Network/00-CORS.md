@@ -33,14 +33,16 @@
 	- 간단한 요청의 경우, 서버에서 `Access-Control-Allow-Origin:` 헤더를 추가한 응답을 보낸다. 
 	![Simple Request](https://developer.mozilla.org/en-US/docs/Web/HTTP/CORS/simple-req-updated.png)
 2. Preflight Requests(사전 요청)
-	- 
-
-
-
+	- 본 요청을 보내기 전에 OPTIONS 헤더를 단 요청을 먼저 보내, 안전성을 확인하는 형태의 요청이다. 
+	- 이 경우, 실제 POST 요청이 아닌 OPTIONS 요청에 `Access-Control-Request-*` 헤더가 포함되며, 이는 서버에게 실제 요청이 전달될 때 수행할 메서드와 기타 내용을 명시해주는 역할을 한다. 
+	- OPTIONS 메서드는 실제 리소스를 변경할 수 없는 안전한 메서드이다. 
+	![Preflight Requests](https://developer.mozilla.org/en-US/docs/Web/HTTP/CORS/preflight_correct.png)
 3. Credential Requests(인증을 이용하는 요청)
+	- 요청 헤더에 `withCredentials`와 같은 헤더가 포함된 경우 쿠키를 동반하게 되어, 서버의 응답에 `Access-Control-Allow-Credentials: true` 헤더가 포함되지 않을 경우 브라우저는 이를 거부하게 된다. 
+	![Credential Requests](https://developer.mozilla.org/en-US/docs/Web/HTTP/CORS/cred-req-updated.png)
 
 ### 배운 점
-- 
+- 최근 통신의 기원과 발전에 대한 서적을 읽고 있는데, 예나 지금이나 통신은 사회의 효용을 증진시키는 만큼 엄격한 규약을 지킴으로써 성사된다는 것을 느낀다. HTTP 요청과 응답과 관련한 내용을 귀찮거나 번거롭게 느낄 것이 아니라 더욱 효율적인 소통을 위한 과정으로 이해하는 것이 더욱 적절할 것이다. 
 
 ### 참고자료
 - [CORS는 왜 이렇게 우리를 힘들게 하는걸까?](https://evan-moon.github.io/2020/05/21/about-cors/)
