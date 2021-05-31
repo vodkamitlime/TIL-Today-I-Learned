@@ -5,8 +5,9 @@
 - 용량이 작고 지기관적으로 읽고 쓸 수 있다는 장점 덕분에 대부분의 웹 API 나 Configuration 파일에 활용된다. 
 - Javascript 와의 호환성도 높으며, 대부분의 프로그래밍 언어에 JSON 데이터를 파싱할 수 있는 내외장 모듈이 존재한다. (ex: python 의 json 모듈)
 - XML vs JSON
-	- XML
 ```xml
+// xml
+
 <?xml version="1.0" encoding="ISO-8859-1"?>  
 <note>  
   <to>Tove</to>  
@@ -15,8 +16,9 @@
   <body>Don't forget me this weekend!</body>  
 </note>  
 ```
-	- JSON
 ```JSON
+// JSON
+
 {
   "squadName": "Super hero squad",
   "homeTown": "Metro City",
@@ -49,6 +51,7 @@
 - 모든 String 은 꼭 double quote (" ") 로 감싸주어야 한다.
 	- Javascript 내 일반적인 객체나 배열, 문자열을 JSON.stringify() 로 감싸준다면 JSON 문법에 맞는 JSON 객체를 얻을 수 있다. 
 	- JSON.stringify() 시 Function, Symbol, 값이 undefined 인 프로퍼티는 무시된다. 
+  - 순환 참조되는 객체를 stringify 하려면 조금 더 까다로운 방법을 사용해야 한다 (참고자료 참조)
 ```js
 JSON.stringify('haha') // '"haha"'
 JSON.stringify({'one':'json'}) // '{"one":"json"}'
@@ -64,7 +67,6 @@ let user = {
 
 alert( JSON.stringify(user) ); // {} (빈 객체가 출력됨)
 ```
-	- 순환 참조되는 객체를 stringify 하려면 조금 더 까다로운 방법을 사용해야 한다 (참고자료 참조)
 - JSON으로 인코딩 된 (직렬화 처리된 _serialized_, 문자열로 변환된 _stringified_, 직렬화된 _serialized_) 객체를 반대로 JSON 화 해주는 메서드는 JSON.parse() 이다. 
 
 ### More about JSON.stringify()
