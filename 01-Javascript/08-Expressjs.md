@@ -83,7 +83,8 @@ app.use('/static', express.static('public'))
 
 ## 배운 점
 - 가장 중요하지만 계속 잊어버렸던 사실은 js 파일을 수정한 뒤에는 서버를 껐다 켜 주어야 반영이 된다는 점이다. 이러한 불편은 nodemon 등의 모듈을 활용하면 쉽게 해결할 수 있다. 
-- 
+- 미들웨어가 app 단위로만 적용 가능하다고 생각했는데 구체적인 정의를 보고 나니 조금 더 명쾌하게 적용 기준을 이해할 수 있게 되었다. 
+- 라우팅의 정확한 개념은 더욱 리서치가 필요하다.
 
 ## 참고 자료
 - [Express 공식 문서](https://expressjs.com/en/starter/hello-world.html)
