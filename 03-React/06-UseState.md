@@ -16,16 +16,33 @@ const [state, setState] = useState('')
 ```jsx
 function someComponent(){
 	const [arr, setArr] = useState([1,2,3])
+	const [arr2, setArr2] = useState([4,5,6])
 
 	function clicked() {
-		arr[1] = 
+		arr.push(arr[arr.length-1] + 1)
 	}
 
+	function clickedRender(){
+		setArr2([...arr2, 7])
+	}
 	return (
 		<>
-			<button onClick={() => clicked(); clickedRender();}>
+			<button onClick={() => clicked()}>
+			{arr}
+			</button>
+			<button onClick={() => clickedRender()}>
+			{arr2}
 			</button>
 		</>
 		)
 }
 ```
+- 위의 예제에서 처음 화면에 표시되는 값은 두 개의 다른 상태인 [1,2,3] 과 [4,5,6] 이다.
+- clicked() 함수는 직접 상태를 변경하고 있으므로 첫 번째 버튼을 아무리 눌러도 화면의 표시가 바뀌지 않는다. 화면 내 리렌더링을 명시하는 다른 요소가 작동할 경우에만 표시가 바뀐다.
+- clickedRender() 버튼은 setState 함수인 setArr2를 통해 상태를 변경하고 있으므로 버튼을 누르는 즉시 렌더링이 되어 결과물이 출력된다. 
+
+## 배운 점
+- console 에 변경된 상태값이 찍힌다고 해서 렌더링이 되었다는 의미는 아니다.
+
+## 참고 자료
+- [Why Not To Modify React State Directly](https://daveceddia.com/why-not-modify-react-state-directly/)
