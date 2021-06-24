@@ -11,4 +11,5 @@ Upload new methods or algorithms learned daily basis
 	|_ 00-Stack-Queue<br>
 01-Javascript<br>
 02-Python<br>
-03-React
+03-React<br>
+99-IT-terms
