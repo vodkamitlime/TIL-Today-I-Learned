@@ -8,10 +8,10 @@
 - 데이터베이스 분할을 일컫는 용어로, DB를 여러 부분으로 분할하는 것이다. 분한된 각 부분을 '파티션' 이라고 부르며, 데이터가 너무 커져서 (VLDB : Very Large DBMS) 조회 시간이 길어지거나 성능 향상 등의 이유로 행해진다. 
 - Horizontal Partitioning (Sharding): 테이블의 각 행을 다른 테이블에 분산시키는 것이다.
 	- 장점: 데이터의 개수를 기준으로 나눌 수 있으며, 데이터 분할이 되며 index 의 개수도 작아지므로 성능 향상에 도움이 된다. 분할된 테이블은 같은 스키마를 갖는다. 
-	![Horizontal partitioning](https://nesoy.github.io/assets/posts/20180222/5.png)
+![Horizontal partitioning](https://nesoy.github.io/assets/posts/20180222/5.png)
 - Verical Partitioning: 테이블의 일부 열을 빼서 다른 테이블에 분산시키는 것이다. 
-	![vertical partitioning](https://nesoy.github.io/assets/posts/20180222/6.png)
 	- 장점: 자주 사용하는 컬럼을 분리시켜 성능을 향상시킬 수 있다.
+![vertical partitioning](https://nesoy.github.io/assets/posts/20180222/6.png)
 
 ### Partitioning 의 방법
 1. Range Partitioning (Range based sharding)
