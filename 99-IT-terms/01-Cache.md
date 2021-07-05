@@ -20,7 +20,7 @@
 
 ![Private-Shared-Cache](https://mdn.mozillademos.org/files/13777/HTTPCachtType.png)
 
-### 배운 점 :
+## 배운 점 :
 - 알고리즘에서도 memoization 을 활용하여 중복 연산을 예방하듯 웹 동작에도 불필요한 중복 렌더링을 방지하는 방법이 존재한다. 
 
 ### 참고자료

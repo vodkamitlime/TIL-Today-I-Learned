@@ -12,7 +12,7 @@ const [state, setState] = useState('')
 - state 를 직접 수정해주거나 객체의 값 또는 속성을 수정해줄 수는 있으나, 직접 수정하게 될 경우 렌더링이 진행되지 않아 변동된 값이 즉각 적용되지 않는다. 
 - setState 함수를 활용할 경우 렌더링이 이루어지기 때문에 변동된 값이 적용된다.
 
-### 예제
+## 예제
 ```jsx
 function someComponent(){
 	const [arr, setArr] = useState([1,2,3])
@@ -41,7 +41,7 @@ function someComponent(){
 - clicked() 함수는 직접 상태를 변경하고 있으므로 첫 번째 버튼을 아무리 눌러도 화면의 표시가 바뀌지 않는다. 화면 내 리렌더링을 명시하는 다른 요소가 작동할 경우에만 표시가 바뀐다.
 - clickedRender() 버튼은 setState 함수인 setArr2를 통해 상태를 변경하고 있으므로 버튼을 누르는 즉시 렌더링이 되어 결과물이 출력된다. 
 
-## 배운 점
+## 배운 점:
 - console 에 변경된 상태값이 찍힌다고 해서 렌더링이 되었다는 의미는 아니다.
 
 ## 참고 자료

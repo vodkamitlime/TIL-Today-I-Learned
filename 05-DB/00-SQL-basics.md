@@ -13,9 +13,7 @@
 ## (MY)SQL 기본 문법
 ### CREATE
 ```sql
-CREATE TABLE users(
-	fieldname datatype PRIMARY KEY AUTO_INCREMENT
-); 
+CREATE TABLE users(fieldname datatype PRIMARY KEY AUTO_INCREMENT); 
 
 CREATE TABLE name AS (SELECT * FROM othername);
 ```

@@ -22,7 +22,7 @@
 	- Framework 을 사용할 때는 Framerwork 가 제어권을 가지고 있다. 따라서 코드 작성자는 코드 위치, 코드 작성법 등 Framework 의 규칙을 따라야 한다. 
 ![IoC](https://media.geeksforgeeks.org/wp-content/uploads/framework-vs-library.png)
 
-### 배운 점 :
+## 배운 점 :
 - 지난 2주간 React가 Framework인줄 알고 작업했는데, React 는 Library 가 맞다. ([공식문서](https://ko.reactjs.org/)에도 "사용자 인터페이스를 만들기 위한 JavaScript 라이브러리"로 표기되어 있다.
 	> 하지만 더 알아볼수록 React 는 Library 가 아닌 Framework 라고 주장하는 진영도 있다는 점을 발견했다. 실질적으로 활용되는 방식이 Framework 와 유사해서 그런 듯 하다. 
 

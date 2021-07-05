@@ -65,7 +65,7 @@ let store = createStore(todoApp);
 2. useDispatch() Hooks
 - 리듀서에 action 을 담아 전달하는 역할을 한다.
 
-## 배운 점
+## 배운 점:
 - Action-Reducer-Store 의 흐름을 명확하게 이해하게 되었다.
 
 ## 참고 자료

@@ -4,7 +4,7 @@
 - DB 패러다임이란 DB 를 저장하고 관리하는 방법을 의미한다.  
 - 각 패러다임마다 최적의 사용 환경과 조건이 존재한다. 
 
-1. Key-Value DB
+## 1. Key-Value DB
 - DBMS: Redis, Memcached, Etcd 등
 - 특징: 
 	- Javascript 의 object 또는 python 의 dictionary 데이터 타입과 비슷하다.
@@ -19,7 +19,7 @@
 
 ![key-value](https://fireship.io/lessons/top-seven-database-paradigms/img/key-value.png)
 
-2. Wide-Column DB
+## 2. Wide-Column DB
 - DBMS: Cassandra, Apache HBase 등
 - 특징: 
 	- key-value DB 에 차원을 하나 더 추가한 것과 유사하다. 
@@ -38,7 +38,7 @@
 
 > 1번, 2번 패러다임은 primary app DB 로 활용되지는 않는다.
 
-3. Document Oriented DB
+## 3. Document Oriented DB
 - DBMS: MongoDB, Firestore, CouchDB 등
 - 특징:
 	- 각 Document 별 key-value pair 가 존재하며, 비구조적이고 스키마를 요구하지 않는다. Document 들끼리 다시 하나의 collection 으로 묶이는데, collection 간 서열화가 가능하다.
@@ -54,7 +54,7 @@
 
 ![document](https://fireship.io/lessons/top-seven-database-paradigms/img/document.png)
 
-4. Relational DB
+## 4. Relational DB
 - DMBS: MySQL, Postgres, SQL Server, CockroachDB 등 
 - 특징:
 	- 가장 오래되었으며 자주 사용되는 DB 의 유형 중 하나이다. 
@@ -69,7 +69,7 @@
 
 ![RDB](https://fireship.io/lessons/top-seven-database-paradigms/img/relational.png)
 
-5. Graph DB
+## 5. Graph DB
 - DBMS: Neo4j, DGraph, Janus Graph 등
 - 특징:
 	- 데이터 자체는 노드로(정점) 표현되며, 데이터 간의 관계는 엣지로(간선) 표현된다. 
@@ -82,7 +82,7 @@
 
 ![Graph](https://fireship.io/lessons/top-seven-database-paradigms/img/graph.png)
 
-6. Search Engine DB
+## 6. Search Engine DB
 - DBMS: ElasticSearch, Algolia, MeiliSearch, Solr 등
 - 특징:
 	- 입력값에 알맞게 거대한 db 에서 유사한 값을 찾아 출력해야 하는 경우에 활용된다.
@@ -93,7 +93,7 @@
 
 ![search](https://fireship.io/lessons/top-seven-database-paradigms/img/search-engine.png)
 
-7. Multi-model DB
+## 7. Multi-model DB
 - DMBS: FaunaDB, CosmosDB 등
 - 특징:
 	- 서버리스 DB 이며, GUI 를 활용하여 document 형 데이터에 접근할 수 있다. 
