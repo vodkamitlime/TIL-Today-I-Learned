@@ -28,8 +28,12 @@ user = null;
 
 ### 최적화 기법
 1. Generational Collection(세대별 수집) : 새로 생긴 객체일수록 역할을 다할 가능성이 높기 때문에 더 많이 감시하고, 오래 살아남은 객체는 덜 감시
-2. Incremental Collection(점진적 수집) : 
-3. Idle-time Collection(유휴 시간 수집) : 
+2. Incremental Collection(점진적 수집) : 컬렉션을 여러 부분으로 분리하여 별도로 수행함으로써 작업을 분리하고 지연 시간을 줄임 
+3. Idle-time Collection(유휴 시간 수집) : CPU 가 유휴 상태일 때만 실행 
+
+## 배운 점:
+- js 의 가비지 컬렉션은 dfs 알고리즘과 상당히 유사하게 작동한다. 알고리즘을 공부해야 하는 필요성이 여기서도 나타난다.
+- 가비지 컬렉션이 작동하는 방식을 알아야 메모리 관리를 효율적으로 할 수 있을 것이다.
 
 ### 참고 자료
 - [가비지 컬렉션](https://ko.javascript.info/garbage-collection)
