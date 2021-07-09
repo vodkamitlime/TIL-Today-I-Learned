@@ -22,7 +22,11 @@
 - 이미지를 활용하여 만든 하나의 독립적인 환경이 컨테이너이다. 
 
 ## 배운 점:
-- 
+- 클라이언트와 서버를 개발할 때 동일한 환경에서 개발하기 때문에 localhost 와 port 번호를 활용해 통신을 하는 경우가 많다. 그런데 서버와 클라이언트가 각각 다른 컨테이너에 올라가 다른 ip 주소를 할당받을 경우 localhost 로 더 이상 접속이 불가할 것이라고 생각했으며, 개별적으로 run 한 경우 이 사실이 맞다. 그러나 여러 개의 컨테이너를 하나의 네트워크에서 실행하게 해주는 docker compose 를 활용하면 이 문제를 해결할 수 있다.
+- Docker Compose 는 하나의 디폴트 네트워크에 모든 컨테이너를 연결한다. yaml 파일이 위치한 디렉토리 이름 뒤에 `_default` 가 붙는다. 그리고 필요에 따라 다른 네트워크도 추가해줄 수 있다.
+- Docker compose up 실행 시 먼저 네트워크를 생성해놓고 각 컨테이너를 구동한 후 네트워크에 연결시킨다. 
 
 ### 참고 자료:
 - [도커 컨테이너와 가상머신, 가상환경](https://jhleed.tistory.com/199)
+- [Docker Compose 네트워크](https://www.daleseo.com/docker-compose-networks/)
+- [Networking in Compose](https://docs.docker.com/compose/networking/)
