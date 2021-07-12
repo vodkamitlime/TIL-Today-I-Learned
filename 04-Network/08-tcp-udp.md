@@ -27,5 +27,13 @@
 - Error Detection (오류 감지)
 
 ## UDP
+- User Datagram Protocol
 - IP 프로토콜에 PORT, checksum 필드 정보만 추가한 프로토콜이다.
-- 신뢰성은 낮지만 3 way handshake 를 사용하지 않으므로 속도가 빠르다. 
+- 신뢰성은 낮지만 3 way handshake 를 사용하지 않으므로 속도가 빠르다. (따라서 데이터의 신뢰성이 중요하지 않을 때 사용한다 ex 영상 스트리밍)
+
+## 배운 점
+- 네트워킹에 정(正)도란 없으며, 전송하고자 하는 데이터, 달성하고자 하는 목적에 따라 활용하게 되는 프로토콜이 달라진다.  
+
+### 참고 자료:
+- [[10분 테코톡] 👨‍🏫르윈의 TCP UDP](https://youtu.be/ikDVGYp5dhg)
+- [TCP vs UDP Comparison Cisco CCNA 200-301](https://www.youtube.com/watch?v=cA9ZJdqzOoU&ab_channel=CertBros )
