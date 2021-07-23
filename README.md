@@ -13,4 +13,4 @@ Upload new methods or algorithms learned daily basis
 03-React<br>
 04-Network<br>
 05-DB<br>
-99-IT-terms
+99-miscellaneous
