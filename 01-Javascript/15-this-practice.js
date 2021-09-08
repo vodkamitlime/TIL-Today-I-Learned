@@ -31,5 +31,26 @@ a()
 // 보면 이 코드 전체가 하나의 function () { // 여기 안에 들어가있음}
 // 그리고 해당 function 의 전달인자로 exports, require, module, __filename, __dirname 이 들어옴
 
+const temp = {
+
+    age: 10,
+    tempFunc() {
+        console.log(this.age)
+    }
+
+}
+
+temp.tempFunc();
+
+const temp1 = {
+
+    age: 10,
+    tempFunc: () => {
+        console.log(this.age)
+    }
+}
+
+temp1.tempFunc();
+
 // 출처: https://www.zerocho.com/category/NodeJS/post/5b67e8607bbbd3001b43fd7b
 // 출처: https://youtu.be/jWllMubtfPQ
