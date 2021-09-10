@@ -18,7 +18,7 @@ console.log(this === global)
 // 지역 변수 안에서의 this 는 global 과 같음
 function a() {
     console.log('a function')
-    console.log(this)
+    console.log(this === global)
     console.log(module.exports)
     console.log(global)
 }
@@ -51,6 +51,30 @@ const temp1 = {
 }
 
 temp1.tempFunc();
+
+let group = { 
+    title: "1모둠", 
+    students: ["보라", "호진", "지민"], 
+    showList() { 
+        this.students.forEach(function(student) { 
+            // TypeError: Cannot read property 'title' of undefined 
+            console.log(this.title + ': ' + student) 
+        }); 
+    } 
+};
+
+let group1 = { 
+    title: "1모둠", 
+    students: ["보라", "호진", "지민"], 
+    showList() { 
+        this.students.forEach(() => { 
+            // TypeError: Cannot read property 'title' of undefined 
+            console.log(this.title + ': ' + student) 
+        }); 
+    } 
+};
+
+
 
 // 출처: https://www.zerocho.com/category/NodeJS/post/5b67e8607bbbd3001b43fd7b
 // 출처: https://youtu.be/jWllMubtfPQ
