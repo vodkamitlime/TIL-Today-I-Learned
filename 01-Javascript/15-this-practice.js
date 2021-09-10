@@ -67,9 +67,8 @@ let group1 = {
     title: "1모둠", 
     students: ["보라", "호진", "지민"], 
     showList() { 
-        this.students.forEach(() => { 
-            // TypeError: Cannot read property 'title' of undefined 
-            console.log(this.title + ': ' + student) 
+        this.students.forEach( student => { 
+            console.log(this.title + ': ' + student)  // 1모둠 : 보라, 1모둠 : 호진, 1모둥 : 지민
         }); 
     } 
 };
