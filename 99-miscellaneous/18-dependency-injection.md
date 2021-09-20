@@ -118,7 +118,19 @@ function create(options) {
   return new Team(options);
 }
 ```
+- DI 에서 controller 가 작성되어야 할 부분
+```js
+route.post('/', 
+  async (req, res, next) => {
+    const userDTO = req.body;
 
+    const userServiceInstance = Container.get(UserService) // Service locator
+
+    const { user, company } = userServiceInstance.Signup(userDTO);
+
+    return res.json({ user, company });
+  });
+```
 
 ### 참고 자료
 - [Dependency Injection in Node.js](https://blog.risingstack.com/dependency-injection-in-node-js/)
