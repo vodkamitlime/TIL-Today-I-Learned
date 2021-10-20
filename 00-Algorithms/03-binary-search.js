@@ -2,9 +2,6 @@
 // 이진 탐색은 매우 빠른 속도로 데이터를 찾을 수 있지만 반드시 데이터가 정렬되어있어야만 한다
 // 시간복잡도:O(logN)
 
-
-출처: https://im-developer.tistory.com/126 [Code Playground]
-
 function binarySearch (target, dataArray) {
     let low = 0;
     let high = dataArray.length - 1;
@@ -22,4 +19,4 @@ function binarySearch (target, dataArray) {
     return undefined;
 }
 
-  // 출처: https://im-developer.tistory.com/126 [Code Playground]
+// 출처: https://im-developer.tistory.com/126 [Code Playground]
