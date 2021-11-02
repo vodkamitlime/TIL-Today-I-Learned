@@ -64,3 +64,4 @@ function longest<Type extends { length: number }>(a: Type, b: Type) { // only ac
 }
 ```
 - Rule: When possible, use the type parameter itself rather than constraining it
+
