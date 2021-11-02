@@ -40,3 +40,4 @@ function getArea(shape: Shape) {
 ### Never 
 - assignable to every type, however no type is assignable to never 
 - used as a return type for function, and when it is used, it always returns an error or nothing
+- https://yamoo9.gitbook.io/typescript/types/never
