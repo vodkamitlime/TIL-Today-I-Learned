@@ -14,4 +14,7 @@ Upload new methods or algorithms learned daily basis
 04-Network<br>
 05-DB<br>
 06-Web<br>
+07-Typescript<br>
+08-Nestjs<br>
+09-TDD<br>
 99-miscellaneous
