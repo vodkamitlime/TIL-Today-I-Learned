@@ -6,15 +6,11 @@
 Upload new methods or algorithms learned daily basis
 
 
-### 🔖 Index: (updating)
-00-Algorithms<br>
-01-Javascript<br>
-02-Python<br>
-03-React<br>
-04-Network<br>
-05-DB<br>
-06-Web<br>
-07-Typescript<br>
-08-Nestjs<br>
-09-TDD<br>
-99-miscellaneous
+### 🔖 Nowadays (as of Nov.2022), focusing more on... 
+- 01-Language-Frameworks
+	- |_ 04-Kotlin
+- 02-Programming
+	- |_ 02-OOP 
+
+##### Disclaimer
+This repository contains information written while studying with various materials, including on/offline lectures and blog posts. Uploaded files do not guarantee professional knowledge, and may be prone to incorrect or misleading content. 
