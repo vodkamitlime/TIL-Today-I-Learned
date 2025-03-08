@@ -33,7 +33,7 @@ void func() {
      *  - as a result, at the end of the loop, arr1 holds two dangling pointers pointing to invalid memory, and one valid pointer pointing to the value of the last string
      * 
      * Further Analysis: 
-     *  - Then why does it end up to print c! three times? shouldn't it print garbage value?
+     *  - Then why does it end up to print c! three times? shouldn't it print garbage value? or lead to segmentation fault error?
      *  - UB (undefined Behavior)
      *  - however, it has to do with std::string and its behavior of managing internal memory 
      *  - std::string and memory reuse
