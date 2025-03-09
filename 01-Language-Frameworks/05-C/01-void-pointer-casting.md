@@ -18,6 +18,8 @@ void * voidPointer;
     - Ex. `*voidPointer = 1; // unsupported` 
 - Does not support arithmatic calculation
     - Ex. `voidPointer++; // compiler doesn't know how many bytes to add`
+    - Note: **C Standard** doesn't, however **GNU C** supports this attribute
+    - GNU C treats void* like char* for pointer arithmetic, meaning voidPointer++ moves forward by 1 byte. (not portable to other compilers)
 - Can be casted to a pointer that specifies a data type
     - This is a common attribute of all pointers 
     - Ex. `void * -> int * / int * -> float *`
