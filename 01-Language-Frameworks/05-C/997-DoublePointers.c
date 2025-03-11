@@ -66,5 +66,17 @@ int main(void) {
     printf("tC++ %p\n", ++tC);      // 0x7ff7bfeff01c  --> 4 bytes added (one int element)
     printf("pC++ %p\n", *(++pC));   // 0x7ff7bfeff020  --> 8 bytes added (sizeof(c))
 
+    // Multiple Pointers and Arrays
+    char nameA[3] = { 'A', 'B', 'C'};
+    char nameB[3] = { 'D', 'E', 'F'};
+    int levelA[3] = { 1, 2, 3 };
+    int levelB[3] = { 4, 5, 6 };
+
+    void * ppA[2] = { nameA, levelB };
+    void * ppB[2] = { nameB, levelA };
+
+    void ** pppA = ppA;
+    void ** pppB = ppB;
+
     return 0;
 }
