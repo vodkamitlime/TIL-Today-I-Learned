@@ -16,4 +16,38 @@
     - **Progress** : other processes besides the process that exists in the critical section should not interrupt them from entering the critical section
     - **Bounded waiting** : processes’ time allowed within critical section should be finite
 - How to guarantee all three of the primitives?
-    
+    - SW Solutions
+    1. Dekker’s Algorithm
+    2. Peterson’s Algorithm
+    3. Dijkstra’s Algorithm 
+    - problems:
+        - slow speed
+        - complicated implementation
+        - preemption during ME primitive
+        - busy waiting
+    - HW Solutions
+        - TAS Solution (Test And Set)
+    - OS Supported Solutions
+        - Spinlock
+            - integer type variable
+            - Can only access it by initialization, P(), V() operations
+            - P(), V() are atomic operations guaranteed by OS
+            ```c
+            int S; // <- spinlock variable
+            
+            // lock
+            P(S) {
+                while (S <= 0) do
+                endwhile;
+                S <- S - 1;
+            }
+            
+            // unlock
+            V(S) {
+                S <- S + 1;
+            }
+            ```
+            - Problems:
+                1. Busy Waiting 
+                2. Can only use in multi process environments
+        - Semaphore
