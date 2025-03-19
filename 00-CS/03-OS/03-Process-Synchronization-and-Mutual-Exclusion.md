@@ -51,3 +51,42 @@
                 1. Busy Waiting 
                 2. Can only use in multi process environments
         - Semaphore
+            - Proposed by Dijkstra, solved the busy waiting problem
+            - unsigned integer variable (S)
+            - Can only access it by initialization, P(), V() operations
+                - P: Probern (Try)
+                - V: Verhogen (Increment)
+            - Every semaphore variable is allocated a ready queue
+            - Types
+                - **Binary Semaphore**
+                    - S has only 0 or 1 value
+                    - Usually used for mutual exclusion or process synchronization
+                - **Counting Semaphore**
+                    - S can have an integer value of 0 or above
+                    - Solves the producer-consumer problem
+            - Operations
+                - Initialization
+                - P(), V()
+                ```c
+                P(S)
+                if (S > 0)
+                    then S <- S - 1;
+                else wait on the queue Q;
+                    
+                V(S)
+                if (waiting processes on Q)
+                    then wakeup one of them;
+                else S <- S + 1;
+                ```
+            - How Semaphore solves Mutual exclusion
+                - Variable S is set to 0 (process exits in critical section)
+                - Pi enters P(S) → critical section
+                - Pj enters P(S) → instead of busy waiting, it waits in ready queue
+                - Pi exits critical section and enters V(S), wakes Pijin ready queue
+                - Pj wakes up → enters critical section → V(S)
+            - How Semaphore solves process synchronization problem
+                - Semaphores are useful for synchronizing processes’ running order
+                - Variable S set to 0 (no available sync object)
+                - Process Pj already has S
+                - Pi enters P(S) → enters ready queue
+                - Pj enters V(S) → S is set to 1  → wakes up Pi in ready queue
