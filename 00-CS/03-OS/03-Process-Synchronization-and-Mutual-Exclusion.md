@@ -90,3 +90,46 @@
                 - Process Pj already has S
                 - Pi enters P(S) → enters ready queue
                 - Pj enters V(S) → S is set to 1  → wakes up Pi in ready queue
+            - How Semaphore solves Producer-Consumer problem
+                - Producer process: process group that produces message
+                - Consumer process: process group that receives message
+                    ```
+                    Producers | Shared Memory buffer | Consumers
+                    
+                    P1 -------->                  -----> C1
+                    
+                    P2 -------->                  -----> C2
+                    
+                    P3 -------->                  -----> C3
+                    
+                    Ex)
+                    
+                    Printer Driver --> Text           -----> Printer
+                    
+                    Compiler --------> Assembly code  -----> Assembler
+                    
+                    Assembler ------->  Module        -----> Loader
+                    ```
+                - If two producer processes try to access shared memory buffer at once, there may be a problem, synchronization is necessary
+                - Case: Single buffer
+                    ```
+                    (shared variables)
+                    consumed ---> semaphore
+                    produced ---> semaphore
+                        buffer ---> messageQ;
+                        
+                    Producer Pi ---> buffer ---> Consumer Cj
+                    
+                    // Producer
+                    
+                    create new message M
+                    P(consumed) --> waits in queue until buffer can be consumed
+                    buffer <- M
+                    V(produced) --> alerts consumer in queue
+                    
+                    // Consumer
+                    P(produced) --> waits in queue until there is production
+                    m <- buffer
+                    V(consumed)
+                    consume the message m;
+                    ```
