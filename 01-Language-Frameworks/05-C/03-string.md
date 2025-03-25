@@ -60,4 +60,4 @@ char* strs[3] = { "first", "second", "third" };
 for (int i = 0; i < 3; i++) {
     printf(" %s ", strs[i]); 
 }
-```
+```t
