@@ -11,6 +11,39 @@ typedef struct {
     int power;      // 4 bytes
 } Card_2;
 
+/** 
+ * TIP: Bit field
+ * - Bit field allows assigning the size of a member variable in bits
+ * - !! ONLY WORKS WITH INT or UNSIGNED INT !! 
+ * - Can assign bit padding for variable alignment (purpose: when accessing variable, minimizes memory access by CPU)
+ * - If bit padding is 0, it fills padding bit until next word boundary 
+ * - If value takes up more bits than assigned, it will overflow
+ *    - Ex) value 10 is assigned to field of 3 bits, overflow will occur
+ *    -     2^3-1 = 7, 10 = 1010 (binary)
+ *    -     1010 -> 010 (overflow) -> value 2 is stored
+ * - Cannot use address operator (&) with bit field variable, because it is not assured that variable will start at the beginning of byte
+ */
+struct BitField {
+    unsigned int cost : 3;  // ~ 8 values (0 ~ 7)
+    unsigned int : 1;       // 1 bit padding
+    unsigned int atk : 10;  // ~2^10 - 1
+    unsigned int : 0;       // bit padding until next word boundary
+    unsigned int hp : 10;   // ~2^10 - 1
+};
+/**
+ * ========================
+ * one block is one bit
+ * | cost | cost | cost | p   | atk | atk | atk | atk | 
+ * | atk  | atk  | atk  | atk | atk | atk | p   | p   |
+ * | p    | p    | p    | p   | p   | p   | p   | p   |
+ * | p    | p    | p    | p   | p   | p   | p   | p   | --> end of word boundary (in 32-bit system, Word is 4 bytes)
+ * | hp   | hp   | hp   | hp  | hp  | hp  | hp  | hp  |
+ * | hp   | hp   |      |     |     |     |     |     |
+ * ========================
+ * 
+ */
+
+
 int main(void) {
 
     struct Card cards[NUM_CARDS] = { 0 };   // initialize all elements to 0
@@ -82,6 +115,7 @@ int main(void) {
      * 
      * Ex (X - wrong implementation of padding)
      * ========================
+     * one block is one byte
      * c - char, i - int, p - padding
      * |c|c|c|c|c|c|c|c|
      * |c|c|i|i|i|i|p|p|
@@ -92,6 +126,7 @@ int main(void) {
      * 
      * Ex (O - correct implementation of padding)
      * ========================
+     * one block is one byte
      * c - char, i - int, p - padding
      * |c|c|c|c|c|c|c|c|
      * |c|c|p|p|i|i|i|i|
@@ -102,6 +137,12 @@ int main(void) {
 
     printf("Address of variable name: %p\n", &cards[0].name);
     printf("Address of variable power: %p\n", &cards[0].power);
+
+    // Bit Field 
+    struct BitField bf = { 10, 10, 10 };
+    printf("Cost: %d\n", bf.cost);  // Prints 2 due to bit overflow
+    printf("Atk: %d\n", bf.atk);
+    printf("HP: %d\n", bf.hp);
 
     return 0;
 
