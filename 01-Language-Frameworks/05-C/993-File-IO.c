@@ -79,5 +79,24 @@ int main(void) {
     fprintf(fp, "%d %s %f\n", ID, name, score);
     fclose(fp);
 
+    // Binary File
+    /**
+     * - rb, read binary
+     * - wb, write binary
+     * - ab, append binary
+     */
+    int data[5] = { 10, 20, 30, 40, 50 };
+    FILE * binFp = NULL;
+
+    if (!(binFp = fopen("binary.bin", "wb"))) {
+        fprintf(stderr, "Fail to open the file - %s,\n", "binary.bin");
+        exit(1);
+    }
+
+    int i = fwrite(data, sizeof(int), 5, binFp);
+    printf("Success to write %d object(s).\n", i);
+
+    fclose(binFp);
+
     return 0;
 }
