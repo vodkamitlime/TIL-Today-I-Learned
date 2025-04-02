@@ -79,7 +79,7 @@ int main(void) {
     fprintf(fp, "%d %s %f\n", ID, name, score);
     fclose(fp);
 
-    // Binary File
+    // Binary File - read and write memory as it is
     /**
      * - rb, read binary
      * - wb, write binary
@@ -97,6 +97,51 @@ int main(void) {
     printf("Success to write %d object(s).\n", i);
 
     fclose(binFp);
+
+    int buf[5] = { 0 };
+    binFp = fopen("binary.bin", "rb");
+    i = fread(buf, sizeof(int), 5, binFp);
+    for (int i = 0; i < 5; i++) {
+        printf("%d ", buf[i]);
+        prtinf("\n");
+    }
+
+    /**
+     * ascii file vs binary file
+     * - if same data is saved, binary file uses less space 
+     * - ascii file takes up more space because it needs conversion from binary data to readable characters
+     * - ascii file needs read/write logic line by line 
+     * - whereas binary file saves/reads raw data directly
+     */
+
+    /**
+     * File sequential access
+     * - the access logic above was sequential access
+     * - fopen(), fread(), fwrite()...
+     * - fopen() creates a file pointer pointing to the beginning of file ("a" mode points to end of file)
+     * - when I/O is processed, the file pointer moves sequentially
+     * 
+     * File random access
+     * - moving file pointer and processing I/O in random areas 
+     * - fseek(FILE* fp, long offset, int origin) 
+     *   - offset: bytes to move from origin
+     *   - origin: where to start
+     * - rewind(FILE* fp)
+     *   - ininitalizes file pointer location to 0
+     * - ftell(FILE* fp)
+     *   - returns current file pointer location
+     */
+
+    FILE * randFp = fopen("test.txt", "w");
+    fputs("1234567890", randFp);
+    fclose(fp);
+
+    randFp = fopen("test.txt", "r");
+    fseek(randFp, 3, SEEK_SET); // start of file
+    printf("fseek(randFp, 3, SEEK_SET) = %d \n", fgetc(randFp));
+    fseek(randFp, -2, SEEK_END); // end of file
+    printf(" fseek(randFp, -2, SEEK_END) = %d \n", fgetc(randFp));
+    
 
     return 0;
 }
