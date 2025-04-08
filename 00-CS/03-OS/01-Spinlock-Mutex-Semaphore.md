@@ -98,15 +98,19 @@
     Producer Pi ---> buffer ---> Consumer Cj
     
     // Producer
-    
-    create new message M
-    P(consumed) --> waits in queue until buffer can be consumed
-    buffer <- M
-    V(produced) --> alerts consumer in queue
-    
+    repeat
+        create new message M
+        P(consumed) --> waits in queue until buffer can be consumed
+        buffer <- M
+        V(produced) --> alerts consumer in queue
+    until false
+
     // Consumer
-    P(produced) --> waits in queue until there is production
-    m <- buffer
-    V(consumed)
-    consume the message m;
+    repeat 
+        P(produced) --> waits in queue until there is production
+        m <- buffer
+        V(consumed)
+        consume the message m;
+    until false
     ```
+    - Case: N-buffers
