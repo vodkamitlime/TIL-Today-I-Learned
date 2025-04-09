@@ -88,7 +88,6 @@
         
     - If two producer processes try to access shared memory buffer at once, there may be a problem, synchronization is necessary
     - Case: Single buffer
-    
     ```
     (shared variables)
     consumed ---> semaphore
@@ -114,3 +113,78 @@
     until false
     ```
     - Case: N-buffers
+    ```
+    // Shared Variables
+    nrfull: semaphore <- 0 // 채워진 buffer 수
+    nrempty: semaphore <- N // 비워있는 buffer 수
+    mutexP: semaphore <- 1
+    mutexC: semaphore <- 1
+    buffer: array[0..N-1] of message
+    in, out: 0...N-1 <- 0,0
+
+    // Logic
+    Producer Pi ---> buffers ---> Consumer Cj
+
+    // Producer
+    repeat
+        create a new message M; // producer has to check if there is space in buffer
+        P(mutexP);
+        P(nrempty);             // check if there is space in buffer, if there is no space wait in queue until there is space
+        buffer[in] <- M;        // take up space in buffer 
+        in <- (in + 1) mod N;   // update next space 
+        V(nrfull);              // after producing, ++ amount of product
+    until false;
+
+    // Consumer
+    repeat
+        create a new message M; // consumer has to check if there is product in buffer
+        P(mutexC);
+        P(nrfull);              // check if there is product in buffer, if value is greater than 0 proceed, if not wait in queue
+        buffer[out] <- M;       // take up space in buffer 
+        out <- (out + 1) mod N; // update next space 
+        V(nrempty);             // after consuming, ++ amount of space
+    until false;
+    ```
+- How Semaphore solves Reader-Writer problem
+    - Reader only "reads" data, can be accessed by many
+    - Writer only "writes" data, should be done exclusively
+    - Data integrity must be guaranteed
+        - When multiple writers are accessing data, mutual exclusion is necessary
+        - When writers and readers are accessing data at the same time, mutual exclusion is necessary
+    - How to solve: provide preference to reader/writer
+    ```
+    // Shared variables
+    wmutex      : semaphore, 1, 
+    rmutex      : semaphore, 1
+    nreaders    : integer, 0
+
+    // Reader
+    repeat 
+        P(rmutex);
+        if (nreaders = 0) then
+            P(wmutex);
+        endif;
+        nreaders <- nreaders + 1;
+        V(rmutex);
+
+        Perform read operations;
+
+        P(rmutex);
+        nreaders <- nreaders - 1;
+        if (nreaders = 0) then
+            V(wmutex);
+        endif;
+        V(rmutex);
+
+    until false
+
+    // Writer
+    repeat
+        P(wmutex);
+        Perform write operations
+        V(wmutex);
+    until false
+    ```
+- Semaphore wrap-up:
+    - No busy waiting, uses queue to asleep process
+    - Wake-up of semaphore queue is indefinite, might end up in starvation problem
