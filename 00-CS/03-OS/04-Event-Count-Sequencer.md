@@ -1,7 +1,7 @@
 ## Eventcount/Sequencer
 - Can solve starvation problem of semaphore
 - No busy waiting
-- Able to control order or events
+- Able to control order or events  
 
 ### Sequencer
 - Integer type variable
