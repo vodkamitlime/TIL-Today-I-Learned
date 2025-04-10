@@ -182,7 +182,7 @@
     repeat
         P(wmutex);
         Perform write operations
-        V(wmutex);
+        V(wmutex);f
     until false
     ```
 - Semaphore wrap-up:
