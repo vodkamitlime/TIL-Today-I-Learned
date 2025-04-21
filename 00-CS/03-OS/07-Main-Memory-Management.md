@@ -54,12 +54,36 @@
     - Problem #1
         - What if program size > memory size?
         - Use overlay structure
+            - Load only necessary areas on memory
             - Divide program into smaller parts
             - User/programmer has to intervene
     - Problem #2
         - How to protect kernel?
-        - Use boundary register
+        - Use boundary register (boundary address between Kernel and User program)
+    - As a result..
+        - Low system resource utilization
+        - Low system performance
 - Multi-programming
-    - Multiprogramming degree = 
-
-#### Continuous Memory Allocation
+    - Multiprogramming degree = Number of Partitions
+    - FPM (Fixed Partition Multiprogramming)
+        - Memory is allocated beforehand, in fixed sizes
+        - Each process is loaded on one partition (1:1)
+        - How to protect Kernel and User space?
+            - Each partition has boundary register
+        - Fragmentation
+            - Internal Fragmentation
+                - When partition size > Process size, memory is wasted
+            - External Fragmentation
+                - When leftover total memory size > process size, but not continuous, memory is wasted
+        - Low overhead, however system resources may be wasted
+    - VPM (Variable Partition Multiprogramming)
+        - Memory is dynamically allocated while dealing with processes
+        - No internal fragmentation
+        - Placement strategies
+            - First-fit : first partition that has enough space is selected (low overhead but may have low space utility)
+            - Best-fit : smallest partition among ones that have enough space is selected (high overhead)
+            - Worst-fit : biggest partition among ones that have enough space is selected (high overhead)
+            - Next-fit : start finding from most recent area of state table
+        - How to solve external fragmentation?
+            - Coalescing holes : Combine adjacent empty spaces to one partition, when memory is released
+            - Storage Compaction : Combine all empty spaces to one partition (at the price of stopping & rearranging processes, wastes a lot of system resources)
