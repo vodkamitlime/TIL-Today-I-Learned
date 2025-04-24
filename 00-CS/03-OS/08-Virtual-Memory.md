@@ -32,3 +32,8 @@
             - If 1, check real address of block
         4. Calculate real address (r = a + d)
         5. Access memory
+
+### Paging System
+- Dividing program into blocks of equal size
+- Page: divided blocks
+- Page frame: Divided area of memory, same size as page
