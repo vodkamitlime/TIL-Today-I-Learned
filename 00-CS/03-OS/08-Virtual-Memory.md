@@ -37,3 +37,7 @@
 - Dividing program into blocks of equal size
 - Page: divided blocks
 - Page frame: Divided area of memory, same size as page
+- Characteristics:
+    - Not logical division, but of size 
+    - Simple and efficient (compared to segmentation)
+    - No external fragmentation 
