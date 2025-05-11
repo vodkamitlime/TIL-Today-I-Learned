@@ -41,3 +41,13 @@
     - Not logical division, but of size 
     - Simple and efficient (compared to segmentation)
     - No external fragmentation 
+- Address Mapping
+    - Virtual address: v = (p, d)
+        - p : page number
+        - d : displacement (offset)
+    - Address mapping
+        - PMT (Page Map Table)
+    - Address mapping mechanism
+        - Direct mapping
+        - Associative mapping
+        - Hybrid
