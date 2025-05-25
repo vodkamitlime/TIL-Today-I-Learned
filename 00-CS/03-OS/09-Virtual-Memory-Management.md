@@ -48,3 +48,31 @@
         - When there is no more possibility of being changed
 - Load Control Strategies
     - Controls system's multi-programming degree
+
+### Replacement Strategies for Fixed ALlocation
+- Fixed allocation
+    - Giving process a fixed number of page frame
+
+#### Algorithms
+- MIN Algorithm (OPT Algorithm)
+    - Minimizing page fault frequency 
+    - Tactics
+        - Replaces page that will not be referenced for the longest time in the near future
+        - Tie-breaking rule: replaces page with biggest/smallest number
+    - however, it is unrealizable, must know all page reference string beforehand
+- Random Algorithm
+    - selects page to replace randomly
+- FIFO Algorithm
+    - Replaces oldest page
+    - Must have information of page loaded time 
+    - There is high possibility that most frequently used page is replaced, no consideration of locality
+    - FIFO Anomaly 
+        - Page fault may increase even though more page frame have been allocated 
+- LRU Algorithm (Least Recently Used)
+    - Replaces page that hasn't been referenced longest
+    - Have to keep record of page referenced time
+    - Considers locality 
+    - Mostly used 
+    - Cons
+        - Overhead (of recording)
+        - Page fault increases rapidly if smaller number of page frame is allocated compared to necessary amount of loop executions
