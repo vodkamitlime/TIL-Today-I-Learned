@@ -76,3 +76,22 @@
     - Cons
         - Overhead (of recording)
         - Page fault increases rapidly if smaller number of page frame is allocated compared to necessary amount of loop executions
+- LFU Algorithm (Least Frequently Used)
+    - Replaces page that is least referenced
+    - Have to cumulate reference count 
+    - Uses locality 
+- NUR Algorithm (Not Used Recently)
+    - LRU approximation scheme
+    - Lower overhead compared to LRU
+    - Bit vector usage
+
+### Replacement Strategies for Variable Allocation
+- Variable Allocation
+    - Size of memory given to process is dynamic
+
+#### Algorithms
+- Working Set ALgorithm
+    - Working Set: group of pages that are frequently referenced at certain point of process == referenced pages for some recent time
+    - W(t, delta)
+        - t: working set of a process at time t
+        - delta: window size, system parameter
