@@ -95,3 +95,15 @@
     - W(t, delta)
         - t: working set of a process at time t
         - delta: window size, system parameter
+    - Memory Management
+        - Keeps working set in memory 
+            - Lower page fault rate
+            - Higher system quality 
+        - Window size is fixed, important feature for deciding performance
+- Page Fault Frequency Algorithm
+    - decides residence set size depending on page fault rate
+        - Low page fault rate -> decreases PF number allocated to process
+        - High page fault rate -> increases PF number allocated to process
+- Variable MIN algorithm
+    - Optimal of average memory allocation and page fault rate 
+    - However, it is unrealizable 
