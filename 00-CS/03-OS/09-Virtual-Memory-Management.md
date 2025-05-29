@@ -107,3 +107,16 @@
 - Variable MIN algorithm
     - Optimal of average memory allocation and page fault rate 
     - However, it is unrealizable 
+
+### Other Considerations
+- Page Size
+    - Differs from system to system
+    - General page size: 128 bytes ~ 4M bytes
+- Program Restructuring 
+    - System can be rearranged depending on virtual memory structure
+- TLB Reach
+    - Memory size that can be referenced through TLB
+    - Number of entries * page size
+    - To increase TLB hit ratio, 
+        - Increase TLB Size
+        - Increase Page size
