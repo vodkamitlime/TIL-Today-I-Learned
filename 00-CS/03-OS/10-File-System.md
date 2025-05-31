@@ -18,3 +18,44 @@
     - Seek Time (time to move disk head to cylinder)
     - Rotational delay (time it takes for sector to move to head)
     - Data transmission time (time it takes to read sector)
+
+## File System
+- part of OS that manages files used by users
+- Structure
+    - Files
+    - Directory Structure
+    - Partitions
+- File Concept
+    - Sum of related information that is saved on disk
+    - Minimum unit of disk allocation
+    - Sequence of bytes
+- Classification
+    - Of content: Program file / Data file
+    - Of structure: Text file / Binary file
+- File attributes
+    - Name
+    - Identifier
+    - Type
+    - Location
+    - Size
+    - Protection
+    - User identification (owner)
+    - Time, date
+- File operations (provided by OS through system call)
+    - Create
+    - Write
+    - Read
+    - Reposition
+    - Delete
+- File access methods
+    - Sequential access: accesses file by record (or bytes) sequentially
+    - Directed access: accesses wanted block directly
+    - Indexed access: references index and accesses data after finding wanted block
+- File system organization
+    - Partitions (minidisks, volumes)
+        - virtual disk
+    - Directory 
+        - concept to classify and store files
+- Mounting
+    - attaching current FS to another FS
+    - mount point
