@@ -59,3 +59,58 @@
 - Mounting
     - attaching current FS to another FS
     - mount point
+
+## Directory Structure
+- Flat directory structure
+    - just one directory exists in FS
+    - Single-leve directory structure
+    - Issues
+        - File naming
+        - File protection
+        - File management
+        - More problematic in multi user environment
+- 2-Level directory structure
+    - One directory per user
+    - Structure
+        - MFD (Master FD)
+        - UFD (User FD)
+    - Problems
+        - Cannot create sub-directory
+        - Impossible to share files with other users
+- Hierarchical directory structure
+    - able to use tree structure directory
+    - User can create/manage sub directory
+        - system call must be provided
+- Acyclic graph directory structure
+    - extension of hds
+    - can place shared directory, shared file in directory
+    - uses links
+- General graph directory structure
+    - allows cycles
+    - Problems
+        - infinite loop
+
+## File Protection
+- Prevents improper access to file
+- File protection mechanisms
+    - May vary per system size or application area
+    1. Password mechanism
+        - sets PW for all files
+        - implausible
+    2. Access matrix
+        - Describes access rights among domain (user group, process) and object (file, device)
+        - Implementation
+            - Global table: maintains rights of all files in system in table
+            - Access list: saves access rights per file
+                - Alist(Fk) = { <D1, R1> , <D2, R2> ... <Dm, Rm>}
+                - When file is created, each domain is given rights
+                - When file is accessed, checks for rights
+            - Capability list: saves access right per domain
+                - Clist(D1) = { <F1, R1> , <F2, R2> ... <Fp, Rp>}
+                - If capability exists, access rights exists
+                - System has to save capability list in Kernel
+            - Lock-key mechanism
+                - Access list + Capability list
+                - Object has lock, Domain has key (unique bit patterns)
+                - When process of Domain accesses object, the key-lock pair must match
+                - System has to manage key list
