@@ -114,3 +114,32 @@
                 - Object has lock, Domain has key (unique bit patterns)
                 - When process of Domain accesses object, the key-lock pair must match
                 - System has to manage key list
+
+## File Sytstem Implementation
+### Allocation Methods
+- Continuous Allocation
+    - Save file in continuous blocks of disk
+    - Pros: Efficient file access 
+    - Cons: Difficult to get space for new file / External fragmentation / difficult to decide file space size 
+- Discontinuous Allocation
+- Linked Allocation
+    - Save blocks that saves files in linked list
+    - Directory has pointer of first block of file
+    - Pros: Simple / no external fragmentation
+    - Cons: Diificult for direct access / Need space to save pointer / Integrity issues
+    - Usage examples: FAT (File Allocation Table) - keeps next block number in each block's starting point
+- Indexed Allocation
+    - Keeps block information (pointer) of file in Index block
+    - Efficient for direct access
+    - Cons: Space overhead - Index block kept for each file / File size limited due to index block size
+
+### Free Space Management
+- Bit Vector
+    - checks all block's usage in 1 bit flag
+- Linked List
+    - connects empty blocks in linked list
+- Grouping
+    - groups n empty blocks and connects them through linked list 
+    - can easily find sequential empty blocks
+- Counting 
+    - keeps table of sequential empty blocks' first block address and their count
