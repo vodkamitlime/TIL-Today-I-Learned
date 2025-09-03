@@ -1,0 +1,36 @@
+total 600
+drwxr-xr-x  35 haeunkang  staff   1120 Sep  3 23:32 .
+drwxr-xr-x   7 haeunkang  staff    224 Mar  4  2025 ..
+-rw-r--r--   1 haeunkang  staff    198 Jun 14 23:54 01.System.md
+-rw-r--r--   1 haeunkang  staff   2769 Jun 14 23:54 02.Make.md
+-rw-r--r--   1 haeunkang  staff   5393 Jun 14 23:54 03.Low-Level-File-IO.md
+-rw-r--r--   1 haeunkang  staff   7050 Aug  5 23:28 04.High-Level-File-IO.md
+-rw-r--r--@  1 haeunkang  staff   4969 Aug  5 23:30 05.File-Directory-in-Linux.md
+-rw-r--r--@  1 haeunkang  staff   3091 Aug  5 23:53 06.Link.md
+-rw-r--r--@  1 haeunkang  staff   1661 Aug 13 23:28 06.System-Information.md
+-rw-r--r--@  1 haeunkang  staff   2661 Aug 19 00:03 07.Process-Information.md
+-rw-r--r--@  1 haeunkang  staff   3085 Aug 20 00:05 08.Process-Management.md
+-rw-r--r--@  1 haeunkang  staff   5584 Aug 23 18:28 09.Signal.md
+-rw-r--r--@  1 haeunkang  staff   3532 Sep  3 23:28 10.Memory-Mapping.md
+-rw-r--r--@  1 haeunkang  staff    393 Sep  3 23:31 11.Pipe.md
+-rw-r--r--   1 haeunkang  staff      0 Jun 14 23:55 99.Unix-Linux.md
+-rw-r--r--   1 haeunkang  staff   8304 Jun 14 23:54 a.out
+-rw-r--r--   1 haeunkang  staff   1060 Jun 14 23:54 file.c
+-rw-r--r--   1 haeunkang  staff   8304 Jun 14 23:54 hello
+-rwxr-xr-x   1 haeunkang  staff  49472 Jun 14 23:55 helloLinux
+-rw-r--r--   1 haeunkang  staff   1552 Jun 14 23:54 helloLinux.o
+-rw-r--r--   1 haeunkang  staff    103 Jun 14 23:55 hellolinux.c
+-rw-r--r--   1 haeunkang  staff    502 Jun 14 23:54 io-redirection.c
+-rw-r--r--   2 haeunkang  staff     19 Aug  5 23:40 link1.txt
+-rw-r--r--   2 haeunkang  staff     19 Aug  5 23:40 link2.txt
+lrwxr-xr-x   1 haeunkang  staff      9 Aug  5 23:41 link3.txt -> link1.txt
+-rw-r--r--   1 haeunkang  staff      0 Aug  5 23:28 linux.txt
+-rw-r--r--   1 haeunkang  staff      0 Sep  3 23:32 ls.txt
+-rw-r--r--@  1 haeunkang  staff    439 Aug 23 17:22 signal.c
+-rw-r--r--   1 haeunkang  staff   1276 Aug 23 17:23 signal.o
+-rwxr-xr-x   1 haeunkang  staff  49744 Aug 23 17:24 signal.out
+-rw-r--r--@  1 haeunkang  staff    634 Aug 23 17:40 signal2.c
+-rw-r--r--   1 haeunkang  staff   1152 Aug 23 17:40 signal2.o
+-rwxr-xr-x   1 haeunkang  staff  49560 Aug 23 17:41 signal2.out
+-rw-r--r--   1 haeunkang  staff    711 Aug  5 23:28 stat.c
+-rw-r--r--   1 haeunkang  staff   8496 Aug  5 23:28 stat.out
